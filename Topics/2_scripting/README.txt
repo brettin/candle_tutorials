@@ -1,5 +1,5 @@
 An overview of how to write a DNN in keras that can be used in CANDLE.
-Preseented by Tom Brettin.
+Preseented by Tom Brettin (brettin@anl.gov).
 
 In the first 10 minutes we will review the CANDLE Benchmarks. These were the first DNNs used in CANDLE
   Programming language and library choices
