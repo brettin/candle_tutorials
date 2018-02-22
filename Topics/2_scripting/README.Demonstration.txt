@@ -1,3 +1,6 @@
+# This is a short recipe on how to run your first hyperparameter optimization
+# run on the cori supercomputer at NERSC.
+
 # Clone a current copy of the Supervisor and checkout master.
 git clone https://github.com/ECP-Candle/Supervisor
 cd Supervisor
