@@ -59,7 +59,6 @@ def args_overwrite_config(args, config):
     params = config
     args_dict = vars(args)
 
-
     for key in args_dict.keys():
         params[key] = args_dict[key]
 
@@ -72,24 +71,19 @@ def args_overwrite_config(args, config):
     return params
 
 
-def get_nt3_parser():
-    #parser = argparse.ArgumentParser(prog='nt3_baseline',
-    #    formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-    #    description='Train Autoencoder - Pilot 1 Benchmark NT3')
-    parser = argparse.ArgumentParser()
-    
-    return common_parser(parser)
-
 
 def initialize_parameters():
+
     # Get command-line parameters
-    parser = get_nt3_parser()
+    parser = argparse.ArgumentParser()
+    parser = common_parser(parser)
     args = parser.parse_args()
-    #print('Args:', args)
+
     # Get parameters from configuration file
     fileParameters = read_config_file(args.config_file)
-    #print ('Params:', fileParameters)
+
     # Consolidate parameter set. Command-line parameters overwrite file configuration
     gParameters = p1_common.args_overwrite_config(args, fileParameters)
+
     return gParameters
 
