@@ -19,7 +19,7 @@ file_path = os.path.dirname(os.path.realpath(__file__))
 lib_path = os.path.abspath(os.path.join(file_path, '..', '..', 'common'))
 sys.path.append(lib_path)
 
-EPOCH = 400
+EPOCH = 4
 BATCH = 32
 nb_classes = 2
 PL     = 6213   # 38 + 60483
@@ -27,38 +27,38 @@ PS     = 6212   # 60483
 DR     = 0.2    # Dropout rate
 
 def load_data():
-        train_path = 'rip.it.train.csv'
-        test_path = 'rip.it.test.csv'
-        df_train = (pd.read_csv(train_path,header=None).values).astype('float32')
-        df_test = (pd.read_csv(test_path,header=None).values).astype('float32')
+    train_path = 'rip.it.train.csv'
+    test_path = 'rip.it.test.csv'
+    df_train = (pd.read_csv(train_path,header=None).values).astype('float32')
+    df_test = (pd.read_csv(test_path,header=None).values).astype('float32')
 
-	print('df_train shape:', df_train.shape)
-	print('df_test shape:', df_test.shape)
+    print('df_train shape:', df_train.shape)
+    print('df_test shape:', df_test.shape)
 
-        df_y_train = df_train[:,0].astype('int')
-        df_y_test = df_test[:,0].astype('int')
-        Y_train = np_utils.to_categorical(df_y_train,nb_classes)
-	train_classes = np.argmax(Y_train, axis=1)
+    df_y_train = df_train[:,0].astype('int')
+    df_y_test = df_test[:,0].astype('int')
+    Y_train = np_utils.to_categorical(df_y_train,nb_classes)
+    train_classes = np.argmax(Y_train, axis=1)
 
-	np.savetxt("train_classes.csv", train_classes, delimiter=",", fmt="%d")
+    np.savetxt("train_classes.csv", train_classes, delimiter=",", fmt="%d")
 
-        Y_test = np_utils.to_categorical(df_y_test,nb_classes)
-	test_classes = np.argmax(Y_test, axis=1)
+    Y_test = np_utils.to_categorical(df_y_test,nb_classes)
+    test_classes = np.argmax(Y_test, axis=1)
 
-	np.savetxt("test_classes.csv", test_classes, delimiter=",", fmt="%d")
+    np.savetxt("test_classes.csv", test_classes, delimiter=",", fmt="%d")
 
-        df_x_train = df_train[:, 1:PL].astype(np.float32)
-        df_x_test = df_test[:, 1:PL].astype(np.float32)
-        X_train = df_x_train
-        X_test = df_x_test
+    df_x_train = df_train[:, 1:PL].astype(np.float32)
+    df_x_test = df_test[:, 1:PL].astype(np.float32)
+    X_train = df_x_train
+    X_test = df_x_test
 
-        scaler = MaxAbsScaler()
-        mat = np.concatenate((X_train, X_test), axis=0)
-        mat = scaler.fit_transform(mat)
-        X_train = mat[:X_train.shape[0], :]
-        X_test = mat[X_train.shape[0]:, :]
+    scaler = MaxAbsScaler()
+    mat = np.concatenate((X_train, X_test), axis=0)
+    mat = scaler.fit_transform(mat)
+    X_train = mat[:X_train.shape[0], :]
+    X_test = mat[X_train.shape[0]:, :]
         
-        return X_train, Y_train, X_test, Y_test
+    return X_train, Y_train, X_test, Y_test
 
 X_train, Y_train, X_test, Y_test = load_data()
 
@@ -146,7 +146,8 @@ model_json = model.to_json()
 with open("t29res.model.json", "w") as json_file:
         json_file.write(model_json)
 
-# serialize model to YAML                                                                         model_yaml = model.to_yaml()
+# serialize model to YAML
+model_yaml = model.to_yaml()
 with open("t29res.model.yaml", "w") as yaml_file:
         yaml_file.write(model_yaml)
 
