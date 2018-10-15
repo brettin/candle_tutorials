@@ -2,31 +2,52 @@
 # ------------------------------
 
 # Download the Anaconda installer
-curl -o Anaconda3-5.0.1-MacOSX-x86_64.sh https://repo.continuum.io/archive/Anaconda3-5.0.1-MacOSX-x86_64.sh
-
+curl -o Anaconda3-5.3.0-MacOSX-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-5.3.0-MacOSX-x86_64.sh
 # Make the installer executable
-chmod u+x ./Anaconda3-5.0.1-MacOSX-x86_64.sh
+chmod u+x ./Anaconda3-5.3.0-MacOSX-x86_64.sh
 
 # Run the installer, accepting the defaults.
-./Anaconda3-5.0.1-MacOSX-x86_64.sh
+./Anaconda3-5.3.0-MacOSX-x86_64.sh
 
-# Source the .bash_profile to add anaconda3/bin to your path
+# When prompted wtih this question, answer no.
+# Do you wish to proceed with the installation of Microsoft VSCode? [yes|no]
+# >>> no
+
+# Source the relevant bash file to add anaconda3/bin to your path
 source ~/.bash_profile
+source ~/.bashrc
 
 # Or you can manually update your path
-export PATH=/$HOME/anaconda3/bin:$PATH
+export PATH=$HOME/anaconda3/bin:$PATH
 
-# Install additonal modules not shipped with Anaconda
-conda install -c conda-forge tensorflow
-conda update -c anaconda pandas
-conda install hdf5
-pip install git+git://github.com/fchollet/keras.git
+# Create a candle enviornment and activate it
+conda create -n candle python=3.6
+conda activate candle
+
+# Install an additonal module not shipped with Anaconda
+conda install tensorflow
+conda install pandas
+conda install keras
+conda install scikit-learn
+conda install requests
+conda install opencv
+conda install tqdm
+conda install matplotlib
 
 # Download the source files for the tutorial
 git clone https://github.com/brettin/candle_tutorials
 
 # Run a quick test
-cd dl_tutorials
+cd candle_tutorials
 which python
 python setup.test
+
+# Run the DNN that we'll migrate to CANDLE
+cd Topics/1_migrating_your_DNN_to_candle
+curl -o rip.it.test.csv.gz ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/rip.it.test.csv.gz
+curl -o rip.it.train.csv.gz ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/rip.it.train.csv.gz
+gunzip rip.it.test.csv.gz
+gunzip rip.it.train.csv.gz
+
+python ./t29res.py
 
