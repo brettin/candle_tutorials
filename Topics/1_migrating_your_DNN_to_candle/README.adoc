@@ -19,3 +19,17 @@ Then run the code
 ----
 $ python ./t29res.py
 ----
+
+== One-shot on Theta
+
+Run
+
+----
+$ ./submit-theta.sh
+----
+
+This will populate settings in a new script +job-theta.sh+, filtered from +job-theta.sh.m4+
+
++job-theta.sh+ will invoke +task.sh+ on the compute node.
+
++task.sh+ runs the Python interpreter specified in +submit-theta.sh+
