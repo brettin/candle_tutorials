@@ -27,7 +27,15 @@ cd $THIS
 
 PROGRAM=getenv(PROGRAM)
 
+export KMP_BLOCKTIME=0
+export KMP_SETTINGS=1
+export KMP_AFFINITY="granularity=fine,verbose,compact,1,0"
+export NUM_INTER_THREADS=1
+export NUM_INTRA_THREADS=128
+export OMP_NUM_THREADS=128
+
 aprun -n 1 \
+      -cc none \
       -e LD_LIBRARY_PATH=$LD_LIBRARY_PATH \
       -e PYTHON=$PYTHON \
       -e THIS=$THIS \

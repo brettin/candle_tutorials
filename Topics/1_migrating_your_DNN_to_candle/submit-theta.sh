@@ -12,7 +12,7 @@ TIMESTAMP=$( date +%H:%M:%S )
 export NODES=1
 export PROJECT=ecp-testbed-01
 export QUEUE=debug-cache-quad
-export WALLTIME=00:05:00
+export WALLTIME=00:15:00
 export OUTPUT=$THIS/out-$TIMESTAMP.txt
 
 # export PROGRAM=$THIS/test-print.py
