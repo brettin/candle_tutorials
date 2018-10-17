@@ -22,7 +22,14 @@ $ python ./t29res.py
 
 == One-shot on Theta
 
-Run
+Link to the data:
+
+----
+$ ln -s /projects/Candle_ECP/wozniak/data/t29/rip.it.test.csv
+$ ln -s /projects/Candle_ECP/wozniak/data/t29/rip.it.train.csv
+----
+
+Run:
 
 ----
 $ ./submit-theta.sh
