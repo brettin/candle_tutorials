@@ -25,10 +25,13 @@ echo PYTHON=$PYTHON
 THIS=getenv(THIS)
 cd $THIS
 
+PROGRAM=getenv(PROGRAM)
+
 aprun -n 1 \
       -e LD_LIBRARY_PATH=$LD_LIBRARY_PATH \
       -e PYTHON=$PYTHON \
       -e THIS=$THIS \
+      -e PROGRAM=$PROGRAM \
       $THIS/task.sh
 
 echo "JOB: Complete."
