@@ -26,6 +26,14 @@ PL     = 6213   # 38 + 60483
 PS     = 6212   # 60483
 DR     = 0.2    # Dropout rate
 
+# thread opt
+import tensorflow as tf
+from keras import backend as K
+session_conf = tf.ConfigProto(inter_op_parallelism_threads=int(os.environ['NUM_INTER_THREADS']),
+    intra_op_parallelism_threads=int(os.environ['NUM_INTRA_THREADS']))
+sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
+K.set_session(sess)
+
 def load_data():
     train_path = 'rip.it.train.csv'
     test_path = 'rip.it.test.csv'
