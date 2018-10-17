@@ -28,8 +28,11 @@ Run
 $ ./submit-theta.sh
 ----
 
-This will populate settings in a new script +job-theta.sh+, filtered from +job-theta.sh.m4+
+* This will populate settings in a new script +job-theta.sh+, filtered from +job-theta.sh.m4+
+* +job-theta.sh+ will invoke +task.sh+ on the compute node.
+* +task.sh+ runs the Python interpreter specified in +submit-theta.sh+
 
-+job-theta.sh+ will invoke +task.sh+ on the compute node.
+=== Editing
 
-+task.sh+ runs the Python interpreter specified in +submit-theta.sh+
+* Set scheduler settings (+PROJECT+, +QUEUE+) in +submit-theta.sh+
+* Set the Python program (+PROGRAM+) to be run in +submit-theta.sh+
