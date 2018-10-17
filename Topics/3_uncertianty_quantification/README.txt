@@ -28,3 +28,18 @@ First, we must use the PermanentDropout class from the CANDLE library.
 3. set MODEL_PYTHON_SCRIPT in cfg-sys-1.sh
 4. set PROCS, QUEUE, WALLTIME in cfg-sys-1.sh
 
+Need to modify the DNN infer to use PermenantDropout
+ to have a parameterized output file.
+ to hava a paramterized input file.
+ to use PermenantDropout
+
+
+So If I understand this correctly, all I have to do in my DNN is replace the Dropout layer with a PermanentDropout layer from keras_candle?
+
+Yes, you’d need to call the register function only in the code that needs to load the network from checkpoint.
+
+
+
+
+
+
