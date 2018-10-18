@@ -1,0 +1,45 @@
+
+== Local execution
+
+To download the data for t29res.py, run these in the same directory as the
+t29res.py code.
+
+----
+$ wget http://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/rip.it.test.csv.gz
+$ wget http://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/rip.it.train.csv.gz
+----
+
+Then uncompress them
+----
+$ gunzip rip.it.test.csv.gz
+$ gunzip rip.it.train.csv.gz
+----
+
+Then run the code
+----
+$ python ./t29res.py
+----
+
+== One-shot on Theta
+
+Link to the data:
+
+----
+$ ln -s /projects/Candle_ECP/wozniak/data/t29/rip.it.test.csv
+$ ln -s /projects/Candle_ECP/wozniak/data/t29/rip.it.train.csv
+----
+
+Run:
+
+----
+$ ./submit-theta.sh
+----
+
+* This will populate settings in a new script +job-theta.sh+, filtered from +job-theta.sh.m4+
+* +job-theta.sh+ will invoke +task.sh+ on the compute node.
+* +task.sh+ runs the Python interpreter specified in +submit-theta.sh+
+
+=== Editing
+
+* Set scheduler settings (+PROJECT+, +QUEUE+) in +submit-theta.sh+
+* Set the Python program (+PROGRAM+) to be run in +submit-theta.sh+
