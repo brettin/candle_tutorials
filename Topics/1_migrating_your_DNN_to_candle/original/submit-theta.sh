@@ -23,7 +23,7 @@ export PROGRAM=$THIS/t29res.py
 # of generated version
 touch job-theta.sh
 chmod u+w job-theta.sh
-m4 common.m4 job-theta.sh.m4 > job-theta.sh
+m4 ../common.m4 job-theta.sh.m4 > job-theta.sh
 chmod a-w,u+x job-theta.sh
 
 # Submit!

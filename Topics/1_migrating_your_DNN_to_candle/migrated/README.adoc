@@ -1,0 +1,25 @@
+
+== Local execution
+
+----
+$ ln -s ../rip.it.t*
+----
+Modify task name in task.sh file
+Make sure path to Benchmark CANDLE exists: file: ../cc_t29res.py
+Line: sys.path.append('/projects/Candle_ECP/rjain/Benchmarks/common/')
+
+----
+Run:
+
+----
+$ ./submit-theta.sh
+----
+
+* This will populate settings in a new script +job-theta.sh+, filtered from +job-theta.sh.m4+
+* +job-theta.sh+ will invoke +task.sh+ on the compute node.
+* +task.sh+ runs the Python interpreter specified in +submit-theta.sh+
+
+=== Editing
+
+* Set scheduler settings (+PROJECT+, +QUEUE+) in +submit-theta.sh+
+* Set the Python program (+PROGRAM+) to be run in +submit-theta.sh+
