@@ -1,0 +1,4 @@
+xlabel = processes (PPN=16)
+ylabel = tasks/second
+
+legend.enabled = false
