@@ -16,8 +16,7 @@ https://ecp-candle.github.io/Candle/html/tutorials/workflow_upf.html
 # library.
 
 # Make sure that Benchmarks/common is set (outside of CANDLE). Make sure
-# that the data is available. Make sure that the path to the data is fully
-# specified.
+# that the data is available.
 
 # We will setup a clean CANDLE environment by cloning the Supervisor and
 # Benchmarks repositories.
@@ -61,3 +60,6 @@ cd ../Supervisor/workflows/upf/test
 3. set MODEL_PYTHON_SCRIPT in cfg-sys-1.sh 
 4. set PROCS, QUEUE, WALLTIME in cfg-sys-1.sh
 5. create upf-1.txt
+
+# When creating the upf-1.txt, make sure that the path to the data is
+# fully specified.
