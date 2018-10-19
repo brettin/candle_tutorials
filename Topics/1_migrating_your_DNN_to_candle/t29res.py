@@ -15,10 +15,6 @@ from keras.callbacks import ModelCheckpoint, CSVLogger, ReduceLROnPlateau
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, MaxAbsScaler
 
-file_path = os.path.dirname(os.path.realpath(__file__))
-lib_path = os.path.abspath(os.path.join(file_path, '..', '..', 'common'))
-sys.path.append(lib_path)
-
 EPOCH = 4
 BATCH = 32
 nb_classes = 2
@@ -26,10 +22,11 @@ PL     = 6213   # 38 + 60483
 PS     = 6212   # 60483
 DR     = 0.2    # Dropout rate
 
-# thread opt
 import tensorflow as tf
 from keras import backend as K
-theta = True
+
+# set theta = True if running on Theta for threading option
+theta = False
 if theta == True:
 	session_conf = tf.ConfigProto(inter_op_parallelism_threads=int(os.environ['NUM_INTER_THREADS']),
     		intra_op_parallelism_threads=int(os.environ['NUM_INTRA_THREADS']))
