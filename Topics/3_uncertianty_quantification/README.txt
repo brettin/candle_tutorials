@@ -1,6 +1,10 @@
 # Provides examples for running the upf workflow. The examples illustrate
 # both high throughput inferencing and uncertianty quantification.
 
+# Docuementation can be found here.
+https://ecp-candle.github.io/Candle/html/index.html
+https://ecp-candle.github.io/Candle/html/tutorials/workflow_upf.html
+
 # First, we need to modify the DNN to use the PermanentDropout class. This
 # is a wrapper around the keras Dropout class that allows us to use the
 # dropout layers during inferencing.
@@ -35,10 +39,6 @@ cd T29res
 curl -o rip.it.test.csv ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/rip.it.test.csv
 curl -o rip.it.train.csv ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/rip.it.train.csv
 curl -o t29res.model.h5  ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/ori-t29res.model.h5
-
-# Docuementation can be found here.
-https://ecp-candle.github.io/Candle/html/index.html
-https://ecp-candle.github.io/Candle/html/tutorials/workflow_upf.html
 
 # We will demonstrate the use of the dropout layer at inference time.
 # First, we must use the PermanentDropout class from the CANDLE library.
