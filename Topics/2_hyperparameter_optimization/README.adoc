@@ -17,7 +17,7 @@ Edits:
   Edit mlrmbo/test/cfg-prm-1.sh:
 .. Set PARAM_SET_FILE to $EMEWS_PROJECT_ROOT/data/nt3_hps_exp_01.R
 .. You can edit nt3_hps_exp_01.R
-. Set your data location:
+. Set your data location: +
   Edit 1_migrating_your_DNN_to_candle/t29_default_model.txt for Theta:
 .. Set: +
    train_path=/projects/Candle_ECP/wozniak/data/t29/rip.it.train.csv
