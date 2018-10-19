@@ -12,9 +12,7 @@
 
 == Edits 
 
-Provides examples for running different HPO workflows.
-
-Edits:
+Edit the Supervisor configuration scripts to handle your case:
 
 . Point Supervisor to your CANDLE-compliant DNN: +
   Edit workflows/mlrmbo/test/test-1.sh:
