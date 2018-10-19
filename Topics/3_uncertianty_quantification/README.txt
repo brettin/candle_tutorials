@@ -59,7 +59,9 @@ cd ../Supervisor/workflows/upf/test
 2. set BENCHMARK_DIR in cfg-sys-1.sh 
 3. set MODEL_PYTHON_SCRIPT in cfg-sys-1.sh 
 4. set PROCS, QUEUE, WALLTIME in cfg-sys-1.sh
-5. create upf-1.txt
+5. create upf-1.txt file
+6. launch the test by invoking ./upf-1.sh theta
+7. the results are located in the experiments directory
 
 # When creating the upf-1.txt, make sure that the path to the data is
 # fully specified.
