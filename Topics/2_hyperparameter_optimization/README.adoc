@@ -30,5 +30,8 @@ Edit the Supervisor configuration scripts to handle your case:
    train_path=/projects/Candle_ECP/wozniak/data/t29/rip.it.train.csv
 .. Set: +   
    test_path=/projects/Candle_ECP/wozniak/data/t29/rip.it.test.csv
+. To use the reservation: +
+  Edit workflows/mlrmbo/test/cfg-sys-1.sh:
+.. Set QUEUE=R.candle
 . Run it! +
    mlrmbo/test/test-1.sh 000 theta -a
