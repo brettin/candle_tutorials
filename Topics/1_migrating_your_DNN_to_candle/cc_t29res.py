@@ -28,8 +28,8 @@ def initialize_parameters():
     t29_common = candle_keras.Benchmark(file_path, 't29_default_model.txt','keras',
                             prog='/t29res.py',desc='resnet')
 
-    # Need a pointer to the docs showing what is provided
-    # by default
+#A list common parsed parameters are available here: https://ecp-candle.github.io/Candle/html/_modules/default_utils.html#get_common_parser
+
     additional_definitions = [
         {'name':'connections',
          'default':1,

@@ -1,6 +1,10 @@
 # Provides examples for running the upf workflow. The examples illustrate
 # both high throughput inferencing and uncertianty quantification.
 
+# Docuementation can be found here.
+https://ecp-candle.github.io/Candle/html/index.html
+https://ecp-candle.github.io/Candle/html/tutorials/workflow_upf.html
+
 # First, we need to modify the DNN to use the PermanentDropout class. This
 # is a wrapper around the keras Dropout class that allows us to use the
 # dropout layers during inferencing.
@@ -12,8 +16,7 @@
 # library.
 
 # Make sure that Benchmarks/common is set (outside of CANDLE). Make sure
-# that the data is available. Make sure that the path to the data is fully
-# specified.
+# that the data is available.
 
 # We will setup a clean CANDLE environment by cloning the Supervisor and
 # Benchmarks repositories.
@@ -36,10 +39,6 @@ curl -o rip.it.test.csv ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res
 curl -o rip.it.train.csv ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/rip.it.train.csv
 curl -o t29res.model.h5  ftp://ftp.mcs.anl.gov/pub/candle/public/tutorials/t29res/ori-t29res.model.h5
 
-# Docuementation can be found here.
-https://ecp-candle.github.io/Candle/html/index.html
-https://ecp-candle.github.io/Candle/html/tutorials/workflow_upf.html
-
 # We will demonstrate the use of the dropout layer at inference time.
 # First, we must use the PermanentDropout class from the CANDLE library.
 
@@ -60,4 +59,9 @@ cd ../Supervisor/workflows/upf/test
 2. set BENCHMARK_DIR in cfg-sys-1.sh 
 3. set MODEL_PYTHON_SCRIPT in cfg-sys-1.sh 
 4. set PROCS, QUEUE, WALLTIME in cfg-sys-1.sh
-5. create upf-1.txt
+5. create upf-1.txt file
+6. launch the test by invoking ./upf-1.sh theta
+7. the results are located in the experiments directory
+
+# When creating the upf-1.txt, make sure that the path to the data is
+# fully specified.
