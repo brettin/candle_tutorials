@@ -1,6 +1,6 @@
 [Global_Params]
-train_path='./rip.it.train.csv'
-test_path='./rip.it.test.csv'
+train_path='/projects/Candle_ECP/wozniak/data/t29/rip.it.train.csv'
+test_path='/projects/Candle_ECP/wozniak/data/t29/rip.it.test.csv'
 batch_size=64
 epochs=2
 drop=0.2
