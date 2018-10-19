@@ -1,0 +1,27 @@
+
+= Hyperparameter Optimization Demo
+
+*Goal:* Plug your DNN, search, and data into CANDLE/Supervisor.
+
+== Edits 
+
+Provides examples for running different HPO workflows.
+
+Edits:
+
+. Point Supervisor to your CANDLE-compliant DNN: +
+  Edit mlrmbo/test/test-1.sh:
+.. Set MODEL_PYTHON_SCRIPT to cc_t29res
+.. Set MODEL_PYTHON_DIR to $HOME/.../1_migrating_your_DNN_to_candle
+. Set up your search space: +
+  Edit mlrmbo/test/cfg-prm-1.sh:
+.. Set PARAM_SET_FILE to $EMEWS_PROJECT_ROOT/data/nt3_hps_exp_01.R
+.. You can edit nt3_hps_exp_01.R
+. Set your data location:
+  Edit 1_migrating_your_DNN_to_candle/t29_default_model.txt for Theta:
+.. Set: +
+   train_path=/projects/Candle_ECP/wozniak/data/t29/rip.it.train.csv
+.. Set: +   
+   test_path=/projects/Candle_ECP/wozniak/data/t29/rip.it.test.csv
+. Run it! +
+   mlrmbo/test/test-1.sh 000 theta -a
