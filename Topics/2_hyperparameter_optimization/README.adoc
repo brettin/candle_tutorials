@@ -35,3 +35,9 @@ Edit the Supervisor configuration scripts to handle your case:
 .. Set QUEUE=R.candle
 . Run it! +
    mlrmbo/test/test-1.sh 000 theta -a
+
+== Local Swift/T installation
+
+Here is the quick way to install Swift/T locally:
+
+http://swift-lang.github.io/swift-t/guide.html#conda
